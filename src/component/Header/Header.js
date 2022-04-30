@@ -10,8 +10,8 @@ const Header = () => {
 
   return (
     <header className="md:w-11/12 p-4 md:p-0 mx-auto">
-      <nav className="sm:py-2.5 rounded">
-        <div className="container flex flex-wrap justify-between items-center mx-auto">
+      <nav className="sm:py-2.5 rounded ">
+        <div className="flex flex-wrap md:flex-nowrap items-center justify-between md:space-x-12">
           <Link to="/" className="flex items-center">
             <p className="text-4xl font-semibold flex">
               Auto
@@ -27,20 +27,25 @@ const Header = () => {
               <CgMenu className="text-2xl font-extraboldbold text-red-600" />
             )}
           </button>
-          <div
-            className={`w-full md:block md:w-auto ${open ? "block" : "hidden"}`}
-          >
-            <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-lg md:font-medium">
-              <li className="mb-2">
-                <CustomLink to="/home">Home</CustomLink>
-              </li>
-              <li className="mb-2">
-                <CustomLink to="/blog">Blog</CustomLink>
-              </li>
-              <li className="mb-2">
-                <CustomLink to="/about">About Me</CustomLink>
-              </li>
-            </ul>
+          <div className={`w-full md:block ${open ? "block" : "hidden"}`}>
+            <div className="flex flex-col md:flex-row md:justify-between md:items-center">
+              <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-lg md:font-medium">
+                <li className="mb-2 md:mb-0">
+                  <CustomLink to="/home">Home</CustomLink>
+                </li>
+                <li className="mb-2 md:mb-0">
+                  <CustomLink to="/blog">Blog</CustomLink>
+                </li>
+                <li className="mb-2 md:mb-0">
+                  <CustomLink to="/about">About Me</CustomLink>
+                </li>
+              </ul>
+              <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-lg md:font-medium">
+                <li className="mb-2 md:mb-0">
+                  <CustomLink to="/about">Sign In</CustomLink>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </nav>
