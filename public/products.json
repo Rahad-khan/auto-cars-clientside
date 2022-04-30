@@ -1,0 +1,110 @@
+[
+  {
+    "_id": "626d61c4cd2d630bb325c9e5",
+    "price": "$1,700.12",
+    "picture": "https://i.ibb.co/cDb34rh/car1.jpg",
+    "quantity": 36,
+    "name": "Mercedes-Benz S-Class",
+    "supplier": "GEOFORM",
+    "description": "When Mercedes-Benz sets out to make a new S-Class, the brief is to make the best car in the world; simple as that. It has done on every single occasion that this defining ‘big Benz’ has been redesigned over the decades, and the last time that happened in 2020, in a more challenging and fast-changing luxury car market than the car has ever faced, Stuttgart very likely did just the same."
+  },
+  {
+    "_id": "626d61c48360766e1f71a3a5",
+    "price": "$3,007.88",
+    "picture": "https://i.ibb.co/JdRgGFY/car2.jpg",
+    "quantity": 34,
+    "name": "Audi E-tron Quattro",
+    "supplier": "Lacy Holmes",
+    "description": "We’re now entering reasonably well-established times for the premium electric car. There have been fast ones, very fast ones, big ones, small ones, expensive ones and cheap, and some that even attempt a bit of four-wheel driven versatility. "
+  },
+  {
+    "_id": "626d61c4eaceda57cca56e90",
+    "price": "$3,641.64",
+    "picture": "https://i.ibb.co/F6zNdSC/car3.jpg",
+    "quantity": 23,
+    "name": "Audi A8",
+    "supplier": "Glenda Wong",
+    "description": "The latest Audi A8 features some of the most advanced chassis, powertrain and in-car technology in the luxury class including, when it’s finally switched on, what promises to be the greatest capability for autonomous driving of any production car in the world. The car represents Audi doing classic ‘vorsprung durch technik’ in a properly committed way."
+  },
+  {
+    "_id": "626d61c4c2c943dd6d5fb48e",
+    "price": "$3,708.77",
+    "picture": "https://i.ibb.co/1XQRB7x/car4.jpg",
+    "quantity": 40,
+    "name": "Mercedes CLS ",
+    "supplier": "Casey Brown",
+    "description": "Whether Mercedes invented the modern hybrid vehicle bodystyle that, for a while, was amusingly dubbed the ‘coupoon’ (a four-door saloon crossbred with a more tapered silhouette and a swooping coupé-like roofline) or whether it was Maserati with the fifth-generation Quattroporte is a matter of contention. Either way, it’s fair to record that the original Mercedes CLS of 2004 was one of the originators of what still seems a fairly new vehicle type; also, that that vehicle type has become an important part of the modern luxury-car landscape; and that Mercedes has probably done more than any other car maker to popularise it."
+  },
+  {
+    "_id": "626d61c4e1563c6c77d3e741",
+    "price": "$2,690.47",
+    "picture": "https://i.ibb.co/jf5vy6B/car5.jpg",
+    "quantity": 24,
+    "name": "BMW 7 Series",
+    "supplier": "Kerri Dalton",
+    "description": "Since launch in 1977, the 7 Series has been in the shadow of the Mercedes S-Class, but this latest version is BMW’s most committed attempt yet to fully crack the luxury saloon market. The car combines optional adaptive air suspension with pioneering infotainment and convenience features, and offers a choice of two wheelbase lengths and rear- or four-wheel-drive."
+  },
+  {
+    "_id": "626d61c4cbf84fcd2ba70e6e",
+    "price": "$3,054.84",
+    "picture": "https://i.ibb.co/FJNRZCS/car6.jpg",
+    "quantity": 25,
+    "name": "Hull Singleton",
+    "supplier": "ECRATER",
+    "description": "Hello, Hull Singleton! You have 5 unread messages."
+  },
+  {
+    "_id": "626d61c47780c38715ccad10",
+    "price": "$1,565.98",
+    "picture": "https://i.ibb.co/vw8jnFW/car7.jpg",
+    "quantity": 25,
+    "name": "BMW X7",
+    "supplier": "Maura Rosa",
+    "description": "Don’t think of this as an enlarged X5, says Munich, but rather a jacked-up 7-Series that’s been readied for limited off-roading work. That description doesn’t much account for the fact that the X7 is a seven-seat, two-box passenger car with an extended roofline, of course – but it does tell you about the priorities that BMW’s designers and engineers had when it came to refining and tuning the car."
+  },
+  {
+    "_id": "626d61c45468fe531db03a0d",
+    "price": "$1,134.14",
+    "picture": "https://i.ibb.co/j6LG9V1/car8.jpg",
+    "quantity": 25,
+    "name": "Joyce Turner",
+    "supplier": "MANTRO",
+    "description": "Hello, Joyce Turner! You have 5 unread messages."
+  },
+  {
+    "_id": "626d61c450a57e259c2e7b54",
+    "price": "$1,168.99",
+    "picture": "https://i.ibb.co/NFvvKTN/car9.jpg",
+    "quantity": 35,
+    "name": "Lexus LS",
+    "supplier": "Craig Mcdonald",
+    "description": "The LS has always been a niche choice in the UK, but its success elsewhere has guaranteed this latest version a seat at the top saloon table.The car's had a major styling overhaul, and the interior feels both modern and luxurious in a likably unconventional way. There are four trim levels, the top one coming with plenty of equipment and, spec-depending, also a rare kind of material richness that few cars in the world can match."
+  },
+  {
+    "_id": "626d61c4ddbcbd2f6b511b99",
+    "price": "$1,955.54",
+    "picture": "https://i.ibb.co/2c9g9y3/car10.jpg",
+    "quantity": 20,
+    "name": "Maserati Quattroporte",
+    "supplier": "Byers Mcdaniel",
+    "description": "Maserati offers V6 and V8 petrol engines for the car, the latter being available with up to 572bhp if you want it. But even with it, the Quattroporte doesn’t have much sporting soul anymore. It’s become a car for loafing gently around in, and probably being driven in rather than driving yourself, with skewed right-hand-drive control ergonomics spoiling the impression of quality that the car conveys somewhat."
+  },
+  {
+    "_id": "626d61c4750e5dea0e7182bd",
+    "price": "$3,218.54",
+    "picture": "https://i.ibb.co/xXDtKHN/car11.jpg",
+    "quantity": 40,
+    "name": "Toyota Premio",
+    "supplier": "Farmer Johns",
+    "description": "A flagship vehicle of Toyota, the Premio is the most popular model of Toyota in the whole world and most especially in Bangladesh. This Model has a strong build quality and a superior value for money. Mated with Variable Valve Timing with Intelligence (VVT-i) system that works to benefit in optimizing the fuel consumption and engine power. The Premio is an upscale and more luxurious sedan in comparison to the Toyota Allion sedan. Brand new ones are not available here in Bangladesh but you can always get a reconditioned one."
+  },
+  {
+    "_id": "626d61c4c6b468a432bbd2b9",
+    "price": "$3,034.45",
+    "picture": "https://i.ibb.co/m8sgHFG/car12.jpg",
+    "quantity": 30,
+    "name": "Honda Vezel",
+    "supplier": "Harvey Heath",
+    "description": "Honda Vezel is one of the fastest-growing and so popular car of Honda in Bangladesh. Though unfortunately, the official distributor of Honda, DHS motors is not import this model but still other importers selling reconditioned Vezel in Bangladesh. Depends on the model, feature, mileage, option grade etc, the price of Honda Vezel (recondition) is around 21 to 37 lacks."
+  }
+]
