@@ -29,7 +29,7 @@
   {
     "_id": "626d61c4c2c943dd6d5fb48e",
     "price": "$3,708.77",
-    "picture": "https://i.ibb.co/1XQRB7x/car4.jpg",
+    "picture": "https://i.ibb.co/NN4ZQZ0/car10.jpg",
     "quantity": 40,
     "name": "Mercedes CLS ",
     "supplier": "Casey Brown",
@@ -49,9 +49,9 @@
     "price": "$3,054.84",
     "picture": "https://i.ibb.co/FJNRZCS/car6.jpg",
     "quantity": 25,
-    "name": "Hull Singleton",
-    "supplier": "ECRATER",
-    "description": "Hello, Hull Singleton! You have 5 unread messages."
+    "name": "Maserati Grecale GT 2022",
+    "supplier": "Hull Singleton",
+    "description": "We’ve already driven the flagship Trofeo model with its Maserati MC20 supercar-derived 523bhp V6, so now it’s the turn of the more modest GT model with its 2.0-litre four-cylinder petrol. Essentially this is the bread-and-butter version, the car that will likely to attract most of those younger, family-orientated buyers that previously wouldn’t have considered one of the Modense maker’s machines."
   },
   {
     "_id": "626d61c47780c38715ccad10",
@@ -67,9 +67,9 @@
     "price": "$1,134.14",
     "picture": "https://i.ibb.co/j6LG9V1/car8.jpg",
     "quantity": 25,
-    "name": "Joyce Turner",
-    "supplier": "MANTRO",
-    "description": "Hello, Joyce Turner! You have 5 unread messages."
+    "name": "Dacia Duster Extreme SE",
+    "supplier": "Joyce Turner",
+    "description": "Launched in 2018, it was updated last year with a sharper design, better efficiency and a spruced-up interior. Now Dacia has added the crème de la crème of Dusters: the Extreme SE.This plays to its desire to be seen as an outdoorsy, adventure brand. Plus, not many customers opt for the base trim, so Dacia believes it makes sense to feed the upper end of the Duster market, adding a specification based on its highest trim level, Prestige."
   },
   {
     "_id": "626d61c450a57e259c2e7b54",
@@ -83,7 +83,7 @@
   {
     "_id": "626d61c4ddbcbd2f6b511b99",
     "price": "$1,955.54",
-    "picture": "https://i.ibb.co/2c9g9y3/car10.jpg",
+    "picture": "https://i.ibb.co/1XQRB7x/car4.jpg",
     "quantity": 20,
     "name": "Maserati Quattroporte",
     "supplier": "Byers Mcdaniel",
@@ -92,7 +92,7 @@
   {
     "_id": "626d61c4750e5dea0e7182bd",
     "price": "$3,218.54",
-    "picture": "https://i.ibb.co/xXDtKHN/car11.jpg",
+    "picture": "https://i.ibb.co/GtdJgq5/car11.jpg",
     "quantity": 40,
     "name": "Toyota Premio",
     "supplier": "Farmer Johns",
@@ -101,7 +101,7 @@
   {
     "_id": "626d61c4c6b468a432bbd2b9",
     "price": "$3,034.45",
-    "picture": "https://i.ibb.co/m8sgHFG/car12.jpg",
+    "picture": "https://i.ibb.co/F0jn27d/car12.jpg",
     "quantity": 30,
     "name": "Honda Vezel",
     "supplier": "Harvey Heath",

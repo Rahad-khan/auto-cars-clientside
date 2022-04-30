@@ -6,11 +6,11 @@ const UseProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-      axios.get('products.json')
-      .then(response => {
-          const {data} = response
-          setProducts(data)
-        })
+        const getProduct = async () =>{
+           const {data} = await axios.get('products.json')
+                setProducts(data)
+        }
+        getProduct();
     }, [])
     
 
