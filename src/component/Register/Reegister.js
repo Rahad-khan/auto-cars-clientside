@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
-const Login = () => {
+const Reegister = () => {
   const [activeSubmit, setActiveSubmit] = useState(true);
   return (
     <div className="w-full my-16 flex items-center justify-center">
@@ -66,32 +66,43 @@ const Login = () => {
               required
             />
           </div>
-          <div className="flex justify-between items-center mb-6">
-            <div className="form-group form-check">
+          <div class="flex items-start mb-6">
+            <div class="flex items-center h-5">
               <input
                 onClick={(e) => setActiveSubmit(!activeSubmit)}
+                id="terms"
                 type="checkbox"
-                className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                id="exampleCheck2"
+                value=""
+                class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
+                required
               />
-              <label
-                className="form-check-label inline-block text-gray-800"
-                htmlFor="exampleCheck2"
-              >
-                Remember me
-              </label>
             </div>
-            <a
-              href="#!"
-              className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
+            <label
+              for="terms"
+              class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
             >
-              Forgot password?
-            </a>
+              I agree with the{" "}
+              <a
+                href="#!"
+                class={`${
+                  activeSubmit
+                    ? "text-red-300"
+                    : "text-blue-600"
+                }`}
+              >
+                terms and conditions
+              </a>
+            </label>
           </div>
           <button
             disabled={activeSubmit}
             type="submit"
-            className="bg-blue-600 hover:bg-blue-700 hover:shadow-lg active:bg-blue-800 active:shadow-lg
+            className={`
+            ${
+              activeSubmit
+                ? "bg-blue-300"
+                : "bg-blue-600 hover:bg-blue-700 hover:shadow-lg active:bg-blue-800 active:shadow-lg"
+            }
       w-full
       px-6
       py-2.5
@@ -105,15 +116,15 @@ const Login = () => {
       focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
       transition
       duration-150
-      ease-in-out"
+      ease-in-out`}
           >
-            Sign in
+            Register new account
           </button>
           <p className="text-gray-800 mt-6 text-center">
-            Not a member?
-            <Link to="/register">
-              <button className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out ml-1">
-                Register
+            Already hav an account?
+            <Link to="/login">
+              <button className="text-blue-600 hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out ml-1">
+                Login
               </button>
             </Link>
           </p>
@@ -124,4 +135,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Reegister;
