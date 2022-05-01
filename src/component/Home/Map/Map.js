@@ -1,17 +1,17 @@
 import React from 'react';
 // import "leaflet/dist/leaflet.css";
 import './Map.css';
-import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
 const Map = () => {
     const position = [24.84731780267392, 89.37368994626706];
     return (
-      <div className='my-10'>
+      <div className='my-10' id='location'>
           <h1 className='text-3xl md:text-5xl text-center font-semibold mb-8'>OUR <span className='text-red-600'>LOCATION</span></h1>
         <MapContainer
           center={position}
           zoom={13}
-          scrollWheelZoom={true}
+          scrollWheelZoom={false}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

@@ -34,6 +34,7 @@ const Header = () => {
                   <CustomLink to="/home">Home</CustomLink>
                 </li>
                 <li className="mb-2 md:mb-0">
+                  <a href="home#location">Location</a>
                   <CustomLink to="/blog">Blog</CustomLink>
                 </li>
                 <li className="mb-2 md:mb-0">

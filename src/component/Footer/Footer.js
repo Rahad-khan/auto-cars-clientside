@@ -64,105 +64,105 @@ const Footer = () => {
               </div>
             </form>
           </div>
-          <div class="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
             <div>
-              <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">
+              <h2 className="mb-6 text-sm font-semibold text-gray-400 uppercase">
                 Company
               </h2>
-              <ul class="text-gray-300">
-                <li class="mb-4">
-                  <a href="#!" class=" hover:underline">
+              <ul className="text-gray-300">
+                <li className="mb-4">
+                  <a href="#!" className=" hover:underline">
                     About
                   </a>
                 </li>
-                <li class="mb-4">
-                  <a href="#!" class="hover:underline">
+                <li className="mb-4">
+                  <a href="#!" className="hover:underline">
                     Careers
                   </a>
                 </li>
-                <li class="mb-4">
-                  <a href="#!" class="hover:underline">
+                <li className="mb-4">
+                  <a href="#!" className="hover:underline">
                     Brand Center
                   </a>
                 </li>
-                <li class="mb-4">
-                  <a href="#!" class="hover:underline">
+                <li className="mb-4">
+                  <a href="#!" className="hover:underline">
                     Blog
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">
+              <h2 className="mb-6 text-sm font-semibold text-gray-400 uppercase">
                 Legal
               </h2>
-              <ul class="text-gray-300">
-                <li class="mb-4">
-                  <a href="#!" class="hover:underline">
+              <ul className="text-gray-300">
+                <li className="mb-4">
+                  <a href="#!" className="hover:underline">
                     Privacy Policy
                   </a>
                 </li>
-                <li class="mb-4">
-                  <a href="#!" class="hover:underline">
+                <li className="mb-4">
+                  <a href="#!" className="hover:underline">
                     Licensing
                   </a>
                 </li>
-                <li class="mb-4">
-                  <a href="#!" class="hover:underline">
+                <li className="mb-4">
+                  <a href="#!" className="hover:underline">
                     Terms &amp; Conditions
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">
+              <h2 className="mb-6 text-sm font-semibold text-gray-400 uppercase">
                 Download
               </h2>
-              <ul class="text-gray-300">
-                <li class="mb-4">
-                  <a href="#!" class="hover:underline">
+              <ul className="text-gray-300">
+                <li className="mb-4">
+                  <a href="#!" className="hover:underline">
                     iOS
                   </a>
                 </li>
-                <li class="mb-4">
-                  <a href="#!" class="hover:underline">
+                <li className="mb-4">
+                  <a href="#!" className="hover:underline">
                     Android
                   </a>
                 </li>
-                <li class="mb-4">
-                  <a href="#!" class="hover:underline">
+                <li className="mb-4">
+                  <a href="#!" className="hover:underline">
                     Windows
                   </a>
                 </li>
-                <li class="mb-4">
-                  <a href="#!" class="hover:underline">
+                <li className="mb-4">
+                  <a href="#!" className="hover:underline">
                     MacOS
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">
+              <h2 className="mb-6 text-sm font-semibold text-gray-400 uppercase">
                 More
               </h2>
-              <ul class="text-gray-300">
-                <li class="mb-4">
-                  <a href="#!" class="hover:underline">
+              <ul className="text-gray-300">
+                <li className="mb-4">
+                  <a href="#!" className="hover:underline">
                     Service & Repairs
                   </a>
                 </li>
-                <li class="mb-4">
-                  <a href="#!" class="hover:underline">
+                <li className="mb-4">
+                  <a href="#!" className="hover:underline">
                     FAQ & Support
                   </a>
                 </li>
-                <li class="mb-4">
-                  <a href="#!" class="hover:underline">
+                <li className="mb-4">
+                  <a href="#!" className="hover:underline">
                     Research Articles
                   </a>
                 </li>
-                <li class="mb-4">
-                  <a href="#!" class="hover:underline">
+                <li className="mb-4">
+                  <a href="#!" className="hover:underline">
                     Warranties & MaxCare®
                   </a>
                 </li>
