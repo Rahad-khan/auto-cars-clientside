@@ -4,11 +4,15 @@ import { FaFacebookF } from "react-icons/fa";
 import { useSignInWithGoogle, useSignInWithFacebook } from "react-firebase-hooks/auth";
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
+import { useLocation, useNavigate } from 'react-router-dom';
 const SocialLogin = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const [signInWithFacebook, fbUser, fbLoading, fbError] =
     useSignInWithFacebook(auth);
+    const navigate = useNavigate();
+    const location = useLocation();
 
+    let from = location.state?.from?.pathname || "/";
   // error message
   let errorMessage;
   let processing;
@@ -22,6 +26,10 @@ const SocialLogin = () => {
   if (loading || fbLoading) {
     errorMessage = "";
     processing = <Loading></Loading>;
+  }
+
+  if(user || fbUser) {
+      navigate(from, { replace: true });
   }
   return (
     <div>

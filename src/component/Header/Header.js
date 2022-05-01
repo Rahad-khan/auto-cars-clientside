@@ -4,10 +4,14 @@ import CustomLink from "../CustomLink/CustomLink";
 import { CgMenu } from "react-icons/cg";
 import { ImCross } from "react-icons/im";
 import { AiFillCar } from "react-icons/ai";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-
+  const [user] = useAuthState(auth);
+  console.log(user);
   return (
     <header className="md:w-11/12 p-4 md:p-0 mx-auto">
       <nav className="sm:py-2.5 rounded ">
@@ -41,9 +45,19 @@ const Header = () => {
                 </li>
               </ul>
               <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-lg md:font-medium">
-                <li className="mb-2 md:mb-0">
-                  <CustomLink to="/login">Sign In</CustomLink>
-                </li>
+                {user ? (
+                  <li className="mb-2 md:mb-0">
+                    <button 
+                    onClick={() => signOut(auth)}
+                    className="md:text-lg md:font-medium">
+                      Sign Out
+                    </button>
+                  </li>
+                ) : (
+                  <li className="mb-2 md:mb-0">
+                    <CustomLink to="/login">Sign In</CustomLink>
+                  </li>
+                )}
               </ul>
             </div>
           </div>

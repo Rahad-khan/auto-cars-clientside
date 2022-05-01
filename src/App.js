@@ -8,6 +8,8 @@ import Login from './component/Login/Login';
 import ManageProduct from './component/ManageProduct/ManageProduct';
 import Reegister from './component/Register/Reegister';
 import RequireAuth from './component/RequireAuth/RequireAuth';
+  import { ToastContainer} from "react-toastify";
+  import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -29,6 +31,7 @@ function App() {
         <Route path="*" element={<Error />}></Route>
       </Routes>
       <Footer />
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
