@@ -1,20 +1,34 @@
-import React from "react";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import React, { useRef } from "react";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import Loading from "../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-
+    const [sendPasswordResetEmail, sending] =
+      useSendPasswordResetEmail(auth);
+ const emailRef = useRef('')
   const handleLogIn = e => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     signInWithEmailAndPassword(email,password);
   };
+  const handleResetPassword =  (e) => {
+    const email = emailRef.current.value;
+    if (email) {
+      sendPasswordResetEmail(email);
+      toast("Sent email successfully !!!");
+    } else {
+      toast("Enter Your Email Address First");
+    }
+    console.log("object", email);
+    
+  }
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -27,7 +41,7 @@ const Login = () => {
     errorMessage = <p className="text-red-700 mb-4">{error?.message}</p>;
   }
   //   If loading
-  if (loading) {
+  if (loading || sending) {
     errorMessage = "";
     processing = <Loading></Loading>;
   }
@@ -50,7 +64,8 @@ const Login = () => {
               Email address
             </label>
             <input
-            name="email"
+            ref={emailRef}
+              name="email"
               type="email"
               className="form-control
         block
@@ -81,7 +96,7 @@ const Login = () => {
               Password
             </label>
             <input
-            name="password"
+              name="password"
               type="password"
               className="form-control block
         w-full
@@ -116,12 +131,6 @@ const Login = () => {
                 Remember me
               </label>
             </div>
-            <a
-              href="#!"
-              className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
-            >
-              Forgot password?
-            </a>
           </div>
           {errorMessage}
           {processing}
@@ -145,15 +154,24 @@ const Login = () => {
           >
             Log In
           </button>
-          <p className="text-gray-800 mt-6 text-center">
-            Not a member?
-            <Link to="/register">
-              <button className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out ml-1">
-                Register
-              </button>
-            </Link>
-          </p>
         </form>
+        <p className="text-gray-800 mt-2 text-center">
+          Forget Password?
+          <button
+            onClick={handleResetPassword}
+            className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out ml-1"
+          >
+            Reset Your Password
+          </button>
+        </p>
+        <p className="text-gray-800 mt-2 text-center">
+          Not a member?
+          <Link to="/register">
+            <button className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out ml-1">
+              Register
+            </button>
+          </Link>
+        </p>
         <SocialLogin></SocialLogin>
       </div>
     </div>
