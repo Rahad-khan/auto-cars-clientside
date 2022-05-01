@@ -34,7 +34,6 @@ const Header = () => {
                   <CustomLink to="/home">Home</CustomLink>
                 </li>
                 <li className="mb-2 md:mb-0">
-                  <a href="home#location">Location</a>
                   <CustomLink to="/blog">Blog</CustomLink>
                 </li>
                 <li className="mb-2 md:mb-0">
@@ -43,7 +42,7 @@ const Header = () => {
               </ul>
               <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-lg md:font-medium">
                 <li className="mb-2 md:mb-0">
-                  <CustomLink to="/about">Sign In</CustomLink>
+                  <CustomLink to="/login">Sign In</CustomLink>
                 </li>
               </ul>
             </div>
