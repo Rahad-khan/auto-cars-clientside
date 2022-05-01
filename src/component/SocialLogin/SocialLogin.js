@@ -1,7 +1,12 @@
 import React from 'react';
 import { BsGoogle } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
+import { useSignInWithGoogle, useSignInWithFacebook } from "react-firebase-hooks/auth";
+import auth from '../../firebase.init';
 const SocialLogin = () => {
+    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithFacebook, fbUser, fbLoading, fbError] =
+      useSignInWithFacebook(auth);
     return (
       <div>
         <div className="flex items-center my-4">

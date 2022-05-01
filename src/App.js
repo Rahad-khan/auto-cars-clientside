@@ -5,7 +5,9 @@ import Footer from './component/Footer/Footer';
 import Header from './component/Header/Header';
 import Home from './component/Home/Home';
 import Login from './component/Login/Login';
+import ManageProduct from './component/ManageProduct/ManageProduct';
 import Reegister from './component/Register/Reegister';
+import RequireAuth from './component/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -15,7 +17,15 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
-        <Route path="/register" element={<Reegister/>}></Route>
+        <Route path="/register" element={<Reegister />}></Route>
+        <Route
+          path="/inventory/:_id"
+          element={
+            <RequireAuth>
+              <ManageProduct/>
+            </RequireAuth>
+          }
+        />
         <Route path="*" element={<Error />}></Route>
       </Routes>
       <Footer />
