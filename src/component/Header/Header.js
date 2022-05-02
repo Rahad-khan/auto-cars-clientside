@@ -11,7 +11,6 @@ import { signOut } from "firebase/auth";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [user] = useAuthState(auth);
-  console.log(user);
   return (
     <header className="md:w-11/12 p-4 md:p-0 mx-auto">
       <nav className="sm:py-2.5 rounded ">

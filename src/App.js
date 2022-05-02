@@ -10,6 +10,7 @@ import Reegister from './component/Register/Reegister';
 import RequireAuth from './component/RequireAuth/RequireAuth';
   import { ToastContainer} from "react-toastify";
   import "react-toastify/dist/ReactToastify.css";
+import ManageInventory from './component/ManageInventory/ManageInventory';
 
 function App() {
   return (
@@ -21,10 +22,18 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Reegister />}></Route>
         <Route
+          path="/manageInventory"
+          element={
+            <RequireAuth>
+              <ManageInventory />
+            </RequireAuth>
+          }
+        />
+        <Route
           path="/inventory/:_id"
           element={
             <RequireAuth>
-              <ManageProduct/>
+              <ManageProduct />
             </RequireAuth>
           }
         />

@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {BsFillArrowRightCircleFill} from 'react-icons/bs'
 
 const ProductCard = ({product}) => {
     const { description, name, picture, price, quantity, supplier, _id } = product;
+    const navigate = useNavigate();
     return (
       <div className="flex justify-center">
         <div className="rounded-lg shadow-lg bg-white max-w-sm">
@@ -21,18 +22,17 @@ const ProductCard = ({product}) => {
               {description.slice(0, 150)}....
             </p>
             <div className="flex items-center justify-center">
-              <Link to={`inventory/${_id}`}>
-                <button
-                  type="button"
-                  data-mdb-ripple="true"
-                  data-mdb-ripple-color="light"
-                  data-mdb-ripple-duration="1s"
-                  className=" px-6 py-2.5 bg-blue-600 text-white font-medium  leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center space-x-1"
-                >
-                  <span>Manage Stock</span>
-                  <BsFillArrowRightCircleFill className='w-8'></BsFillArrowRightCircleFill>
-                </button>
-              </Link>
+              <button
+                onClick={() => navigate(`/inventory/${_id}`)}
+                type="button"
+                data-mdb-ripple="true"
+                data-mdb-ripple-color="light"
+                data-mdb-ripple-duration="1s"
+                className=" px-6 py-2.5 bg-blue-600 text-white font-medium  leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center space-x-1"
+              >
+                <span>Manage Stock</span>
+                <BsFillArrowRightCircleFill className="w-8"></BsFillArrowRightCircleFill>
+              </button>
             </div>
           </div>
         </div>

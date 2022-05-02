@@ -1,20 +1,18 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 
-const UseProducts = () => {
+const useProducts = () => {
 
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        const getProduct = async () =>{
-           const {data} = await axios.get('products.json')
-                setProducts(data)
+        fetch("http://localhost:5000/cars")
+          .then((res) => res.json())
+          .then((data) => setProducts(data));
         }
-        getProduct();
-    }, [])
+    , [])
     
 
     return [products, setProducts]
 };
 
-export default UseProducts;
+export default useProducts;

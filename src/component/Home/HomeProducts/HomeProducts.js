@@ -1,14 +1,14 @@
 import React from 'react';
-import UseProducts from '../../../hooks/UseProducts';
+import useProducts from '../../../hooks/useProducts';
 import ProductCard from '../ProductCard/ProductCard';
 
 const HomeProducts = () => {
-    const [products] = UseProducts();
+    const [products] = useProducts();
     const lastSixProducts = products.slice(-6);
     return (
       <div className="my-10">
         <h1 className="text-center text-3xl md:text-5xl font-bold mb-10">
-          <span className='border-b-4 pb-2 border-red-400'>
+          <span className='border-b-2 md:border-b-4 pb-2 border-red-400'>
             Inven<span className="text-red-800">Tory</span>
           </span>
         </h1>
