@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import useProducts from "../../hooks/useProducts";
 
 const ManageProduct = () => {
   const { _id } = useParams();
@@ -15,7 +14,21 @@ const ManageProduct = () => {
     };
     getCarData(_id);
   }, [_id]);
-  console.log(car);
+
+  // products delivered
+  const handleDeliverd = async () => {
+    const {quantity, ...rest} = car;
+    const updateQuantiy = quantity - 1 ;
+    const updatedStock = {quantity:updateQuantiy, ...rest};
+
+      const url = `http://localhost:5000/cars/${_id}`;
+
+    const {data} = await axios.put(url,updatedStock);
+    console.log(data)
+    if (data.modifiedCount > 0) {
+      setCar(updatedStock);
+    }
+  }
   const { description, name, picture, price, quantity, supplier } = car;
   return (
     <div>
@@ -37,11 +50,12 @@ const ManageProduct = () => {
               <div className="flex items-center justify-start space-x-3 my-3">
                 <p>Quantity: {quantity}</p>
                 <button
+                onClick={handleDeliverd}
                   type="button"
                   data-mdb-ripple="true"
                   data-mdb-ripple-color="light"
                   data-mdb-ripple-duration="1000ms"
-                  class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                  className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                 >
                   Delivered
                 </button>
@@ -52,7 +66,7 @@ const ManageProduct = () => {
                   data-mdb-ripple="true"
                   data-mdb-ripple-color="light"
                   data-mdb-ripple-duration="1000ms"
-                  class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                  className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                 >
                   Manage Inventory
                 </button>
@@ -61,7 +75,6 @@ const ManageProduct = () => {
           </div>
         </div>
       </div>
-      >
     </div>
   );
 };
