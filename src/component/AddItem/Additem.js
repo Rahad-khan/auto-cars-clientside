@@ -1,4 +1,6 @@
+import axios from 'axios';
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const Additem = () => {
 
@@ -10,7 +12,20 @@ const Additem = () => {
         const supplier = e.target.supplier.value;
         const description = e.target.description.value;
         const picture = e.target.picture.value;
-        console.log(name, price, quantity, supplier, description, picture);
+        const insertData = {
+            price,
+            picture,
+            quantity,
+            name,
+            supplier,
+            description
+        }
+        const url = "http://localhost:5000/car";
+        const {data} = await axios.post(url,insertData)
+        if (data?.insertedId) {
+            toast("Congratulations !!! Your Product Addeded SuccessFully");
+            e.target.reset();
+        }
     }
 
 
