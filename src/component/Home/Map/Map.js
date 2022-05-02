@@ -8,7 +8,7 @@ const Map = () => {
     return (
       <div className="my-10" id="location">
         <h1 className="text-center text-3xl md:text-5xl font-bold mb-10">
-          <span className="border-b-4 pb-2 border-red-400">
+          <span className="border-b-2 pb-2 border-red-400">
             Our <span className="text-red-800">Location</span>
           </span>
         </h1>
