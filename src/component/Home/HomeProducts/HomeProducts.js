@@ -1,5 +1,6 @@
 import React from 'react';
 import useProducts from '../../../hooks/useProducts';
+import Loading from '../../Loading/Loading';
 import ProductCard from '../ProductCard/ProductCard';
 
 const HomeProducts = () => {
@@ -12,6 +13,9 @@ const HomeProducts = () => {
             Inven<span className="text-red-800">Tory</span>
           </span>
         </h1>
+        {
+         (products.length === 0) && <Loading/>
+        }
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
           {lastSixProducts.map((product) => (
             <ProductCard key={product._id} product={product}></ProductCard>

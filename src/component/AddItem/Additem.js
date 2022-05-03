@@ -1,8 +1,11 @@
 import axios from 'axios';
 import React from 'react';
 import { toast } from 'react-toastify';
+import {useAuthState} from 'react-firebase-hooks/auth'
+import auth from '../../firebase.init';
 
 const Additem = () => {
+  const [user] = useAuthState(auth);
 
     const handleAddItem = async (e) => {
         e.preventDefault();
@@ -11,6 +14,7 @@ const Additem = () => {
         const quantity = e.target.quantity.value;
         const supplier = e.target.supplier.value;
         const description = e.target.description.value;
+        const email = e.target.email.value;
         const picture = e.target.picture.value;
         const insertData = {
             price,
@@ -18,9 +22,11 @@ const Additem = () => {
             quantity,
             name,
             supplier,
-            description
+            description,
+            email
         }
-        const url = "http://localhost:5000/car";
+        console.log(insertData);
+        const url = "https://auto-cars-server.herokuapp.com/car";
         const {data} = await axios.post(url,insertData)
         if (data?.insertedId) {
             toast("Congratulations !!! Your Product Addeded SuccessFully");
@@ -84,6 +90,31 @@ const Additem = () => {
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 id="exampleInput7"
                 placeholder="Supplier Name"
+                required
+              />
+            </div>
+            <div className="form-group mb-6">
+              <input
+              defaultValue={user?.email}
+                autoComplete="off"
+                name="email"
+                type="email"
+                className="form-control block
+        w-full
+        px-3
+        py-1.5
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                id="exampleInput7"
+                placeholder="Email"
                 required
               />
             </div>

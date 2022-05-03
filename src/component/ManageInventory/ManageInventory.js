@@ -10,7 +10,7 @@ const ManageInventory = () => {
     const isDelete = window.confirm("Are you really want to delete this item?");
     if (isDelete) {
       console.log(id);
-      const url = `http://localhost:5000/cars/${id}`;
+      const url = `https://auto-cars-server.herokuapp.com/cars/${id}`;
 
       const { data } = await axios.delete(url);
       if (data?.deletedCount > 0) {
@@ -22,7 +22,6 @@ const ManageInventory = () => {
 
   return (
     <div className="md:w-11/12 mx-auto w-full my-10">
-      products = {products.length}
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">

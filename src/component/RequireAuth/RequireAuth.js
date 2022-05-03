@@ -22,7 +22,7 @@ const RequireAuth = ({children}) => {
             <div className="flex justify-center w-full h-screen items-center">
               <div className="block p-10 rounded-lg shadow-lg bg-red-200 max-w-lg">
                 <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">
-                  Your Email is not Verified !!1
+                  Your Email is not Verified !!
                 </h5>
                 <p className="text-gray-700 text-base mb-4">
                   Please Verify Your Email First

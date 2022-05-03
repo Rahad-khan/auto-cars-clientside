@@ -9,7 +9,7 @@ const ManageProduct = () => {
 
   useEffect(() => {
     const getCarData = async (_id) => {
-      const url = `http://localhost:5000/cars/${_id}`;
+      const url = `https://auto-cars-server.herokuapp.com/cars/${_id}`;
       const { data } = await axios.get(url);
       setCar(data);
     };
@@ -22,7 +22,7 @@ const ManageProduct = () => {
     const updateQuantiy = quantity - 1 ;
     const updatedStock = {quantity:updateQuantiy, ...rest};
 
-      const url = `http://localhost:5000/cars/${_id}`;
+      const url = `https://auto-cars-server.herokuapp.com/cars/${_id}`;
 
     const {data} = await axios.put(url,updatedStock);
     if (data.modifiedCount > 0) {
@@ -39,7 +39,7 @@ const ManageProduct = () => {
       const updateQuantiy = parseInt(quantity) + stockNumber;
       const updatedStock = { quantity: updateQuantiy, ...rest };
   
-      const url = `http://localhost:5000/cars/${_id}`;
+      const url = `https://auto-cars-server.herokuapp.com/cars/${_id}`;
   
       const { data } = await axios.put(url, updatedStock);
       console.log(data);

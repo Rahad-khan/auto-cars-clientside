@@ -45,13 +45,27 @@ const Header = () => {
               </ul>
               <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-lg md:font-medium">
                 {user ? (
-                  <li className="mb-2 md:mb-0">
-                    <button 
-                    onClick={() => signOut(auth)}
-                    className="md:text-lg md:font-medium">
-                      Sign Out
-                    </button>
-                  </li>
+                  <>
+                    <li className="mb-2 md:mb-0">
+                      <CustomLink to="/manageInventory">
+                        Manage Inventory
+                      </CustomLink>
+                    </li>
+                    <li className="mb-2 md:mb-0">
+                      <CustomLink to="/addItem">Add Item</CustomLink>
+                    </li>
+                    <li className="mb-2 md:mb-0">
+                      <CustomLink to="/myitems">My Items</CustomLink>
+                    </li>
+                    <li className="mb-2 md:mb-0">
+                      <button
+                        onClick={() => signOut(auth)}
+                        className="md:text-lg md:font-medium"
+                      >
+                        Sign Out
+                      </button>
+                    </li>
+                  </>
                 ) : (
                   <li className="mb-2 md:mb-0">
                     <CustomLink to="/login">Sign In</CustomLink>

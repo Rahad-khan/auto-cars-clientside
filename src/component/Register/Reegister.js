@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import Loading from "../Loading/Loading";
@@ -9,42 +9,75 @@ const Reegister = () => {
   const [activeSubmit, setActiveSubmit] = useState(true);
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, {sendEmailVerification:true});
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+     const navigate = useNavigate();
+     const location = useLocation();
+
+     let from = location.state?.from?.pathname || "/";
 
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
+    const displayName = e.target.displayName.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    createUserWithEmailAndPassword(email, password)
+    await createUserWithEmailAndPassword(email, password);
+    await updateProfile({ displayName });
+    navigate(from, { replace: true });
   } 
 
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  let from = location.state?.from?.pathname || "/";
+ 
   // error message
   let errorMessage;
   let processing;
   //   If give error
-  if (error) {
+  if (error || updateError) {
     errorMessage = (
       <p className="text-red-700 mb-4">{error?.message}</p>
     );
   }
   //   If loading
-  if (loading) {
+  if (loading || updating) {
     errorMessage = "";
     processing = <Loading></Loading>;
-  }
-
-  if (user) {
-    navigate(from, { replace: true });
-    console.log(user);
   }
   return (
     <div className="w-full my-16 flex items-center justify-center">
       <div className="block p-6 rounded-lg shadow-lg bg-white w-full md:w-1/3">
         <form onSubmit={handleRegister}>
+          <div className="form-group mb-6">
+            <label
+              htmlFor="exampleInputUser99"
+              className="form-label inline-block mb-2 text-gray-700"
+            >
+              Name
+            </label>
+            <input
+              name="displayName"
+              type="text"
+              className="form-control
+        block
+        w-full
+        px-3
+        py-1.5
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              id="exampleInputUser99"
+              aria-describedby="emailHelp"
+              placeholder="Enter Your Name"
+              required
+            />
+          </div>
+
           <div className="form-group mb-6">
             <label
               htmlFor="exampleInputEmail2"
@@ -53,7 +86,7 @@ const Reegister = () => {
               Email address
             </label>
             <input
-            name="email"
+              name="email"
               type="email"
               className="form-control
         block
@@ -84,7 +117,7 @@ const Reegister = () => {
               Password
             </label>
             <input
-            name="password"
+              name="password"
               type="password"
               className="form-control block
         w-full
@@ -118,19 +151,15 @@ const Reegister = () => {
             </div>
             <label
               htmlFor="terms"
-              className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300 "
             >
-              I agree with the{" "}
-              <a
-                href="#!"
-                className={`${
-                  activeSubmit
-                    ? "text-red-300"
-                    : "text-blue-600"
-                }`}
+              I agree with the
+              <span
+              style={{marginLeft:'3px'}}
+                className={`${activeSubmit ? "text-red-300" : "text-blue-600"}`}
               >
                 terms and conditions
-              </a>
+              </span>
             </label>
           </div>
           {processing}
