@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
@@ -26,7 +26,6 @@ const Login = () => {
     } else {
       toast("Enter Your Email Address First");
     }
-    console.log("object", email);
     
   }
   const navigate = useNavigate();
@@ -46,14 +45,18 @@ const Login = () => {
     processing = <Loading></Loading>;
   }
 
-  if (user) {
-    navigate(from, { replace: true });
-  }
+  useEffect(()=>{
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [from, navigate, user])
+  
 
 
   return (
     <div className="w-full my-16 flex items-center justify-center">
       <div className="block p-6 rounded-lg shadow-lg bg-white w-full md:w-1/3">
+      <h1 className="text-4xl font-semibold text-blue-500 mb-5">Please Login</h1>
         <form onSubmit={handleLogIn}>
           <div className="form-group mb-6">
             <label

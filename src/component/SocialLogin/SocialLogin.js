@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BsGoogle } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import { useSignInWithGoogle, useSignInWithFacebook } from "react-firebase-hooks/auth";
@@ -28,9 +28,13 @@ const SocialLogin = () => {
     processing = <Loading></Loading>;
   }
 
-  if(user || fbUser) {
+  useEffect(() => {
+    if (user || fbUser) {
       navigate(from, { replace: true });
-  }
+    }
+  }, [fbUser, from, navigate, user])
+  
+  
   return (
     <div>
       <div className="flex items-center my-4">

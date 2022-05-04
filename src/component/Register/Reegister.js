@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
@@ -24,7 +24,6 @@ const Reegister = () => {
     const password = e.target.password.value;
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName });
-    navigate(from, { replace: true });
   } 
 
  
@@ -41,10 +40,20 @@ const Reegister = () => {
   if (loading || updating) {
     errorMessage = "";
     processing = <Loading></Loading>;
-  }
+  };
+
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [from, navigate, user]);
+  
   return (
     <div className="w-full my-16 flex items-center justify-center">
       <div className="block p-6 rounded-lg shadow-lg bg-white w-full md:w-1/3">
+        <h1 className="text-4xl font-semibold text-blue-500 mb-5">
+          Please Register
+        </h1>
         <form onSubmit={handleRegister}>
           <div className="form-group mb-6">
             <label
@@ -155,7 +164,7 @@ const Reegister = () => {
             >
               I agree with the
               <span
-              style={{marginLeft:'3px'}}
+                style={{ marginLeft: "3px" }}
                 className={`${activeSubmit ? "text-red-300" : "text-blue-600"}`}
               >
                 terms and conditions

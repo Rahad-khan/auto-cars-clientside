@@ -7,7 +7,6 @@ import auth from "../../firebase.init";
 const MyItems = () => {
   const [myItems, setMyItems] = useState([]);
     const [user] = useAuthState(auth);
-    console.log(user);
     const {email} = user;
   useEffect(() => {
     if(email){

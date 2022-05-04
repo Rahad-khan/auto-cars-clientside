@@ -8,7 +8,7 @@ const CarOrder = () => {
         VEHICLE PRE-ORDER
       </h1>
       <div>
-        <div className="flex justify-center items-center space-x-10">
+        <div className="flex justify-center items-center flex-col sm:flex-row space-y-4 md:space-y-0 md:space-x-10">
           <div className="flex justify-center">
             <div
               className="block p-5 md:py-14 md:px-12  rounded-lg shadow-lg max-w-sm"
