@@ -54,7 +54,7 @@ const ManageProduct = () => {
   };
   const { description, name, picture, price, quantity, supplier } = car;
   return (
-    <div className="flex items-center justify-center w-full h-screen">
+    <div className="flex items-center justify-center w-full my-10">
       <div className="flex justify-center">
         <div className="flex flex-col md:flex-row md:w-5/6 rounded-lg bg-white shadow-lg">
           <img

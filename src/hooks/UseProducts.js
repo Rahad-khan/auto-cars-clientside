@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 const useProducts = () => {
@@ -5,9 +6,13 @@ const useProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch("https://auto-cars-server.herokuapp.com/cars")
-          .then((res) => res.json())
-          .then((data) => setProducts(data));
+      const getProudcts = async () => {
+        const { data } = await axios.get(
+          "https://auto-cars-server.herokuapp.com/cars"
+        );
+        setProducts(data)
+      }
+      getProudcts();
         }
     , [])
     
