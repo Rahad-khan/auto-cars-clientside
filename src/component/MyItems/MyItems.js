@@ -1,10 +1,12 @@
 import axios from 'axios';
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from "../../firebase.init";
 
 const MyItems = () => {
+  const navigate = useNavigate();
   const [myItems, setMyItems] = useState([]);
     const [user] = useAuthState(auth);
     const {email} = user;
@@ -12,16 +14,24 @@ const MyItems = () => {
     if(email){
         const loadDataByUser = async () => {
            const url = `https://auto-cars-server.herokuapp.com/myitems?email=${email}`; 
-           const { data } = await axios.get(url, {
-             headers:{
-               authorization: `Bearer ${localStorage.getItem("accessToken")}`
-             }
-           });
-           setMyItems(data);
+           try {
+            const { data } = await axios.get(url, {
+              headers: {
+                authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+              },
+            });
+            setMyItems(data);
+           } catch(error) {
+              if(error.response.status === 401 || error.response.status === 403){
+                signOut(auth);
+                navigate('/login')
+              }
+           }
+           
         }
         loadDataByUser();
     }
-  }, [email])
+  }, [email, navigate])
 
     const handleDeleteCars = async (id) => {
       const isDelete = window.confirm(
@@ -40,9 +50,11 @@ const MyItems = () => {
     };
 
     return (
-      <div>
+      <div className="md:w-4/5 p-4 md:p-0 mx-auto">
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg my-10">
-          <h1 className='text-center text-2xl mb-4 font-semibold'>This Is Your Added Item Dear {user?.displayName}</h1>
+          <h1 className="text-center text-2xl mb-4 font-semibold">
+            This Is Your Added Item Dear {user?.displayName}
+          </h1>
 
           <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">

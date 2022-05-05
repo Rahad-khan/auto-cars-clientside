@@ -33,7 +33,6 @@ const ManageProduct = () => {
   const handleStockProduct = async (e) => {
     e.preventDefault();
     const stockNumber = parseInt(e.target.number.value);
-    console.log(typeof stockNumber);
     if (stockNumber && stockNumber > 0){
       const { quantity, ...rest } = car;
       const updateQuantiy = parseInt(quantity) + stockNumber;
@@ -42,7 +41,6 @@ const ManageProduct = () => {
       const url = `https://auto-cars-server.herokuapp.com/cars/${_id}`;
   
       const { data } = await axios.put(url, updatedStock);
-      console.log(data);
       if (data.modifiedCount > 0) {
         setCar(updatedStock);
         toast("Restocked Successfully!!")
