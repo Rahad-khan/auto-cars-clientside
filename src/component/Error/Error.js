@@ -8,7 +8,11 @@ const Error = () => {
       <div id="error">
         <div id="error-container">
           <div className="fof">
-            <h1>Error 404</h1>
+            <h1>
+              Error 404 !!!
+              <br />
+              We couldn't find what you were looking for.
+            </h1>
           </div>
         </div>
       </div>
