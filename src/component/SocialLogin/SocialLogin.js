@@ -5,10 +5,12 @@ import { useSignInWithGoogle, useSignInWithFacebook } from "react-firebase-hooks
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import { useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../../hooks/useToken';
 const SocialLogin = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const [signInWithFacebook, fbUser, fbLoading, fbError] =
     useSignInWithFacebook(auth);
+    const [token] = useToken(user || fbUser);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -28,11 +30,12 @@ const SocialLogin = () => {
     processing = <Loading></Loading>;
   }
 
+
   useEffect(() => {
-    if (user || fbUser) {
+    if (token) {
       navigate(from, { replace: true });
     }
-  }, [fbUser, from, navigate, user])
+  }, [ from, navigate, token])
   
   
   return (

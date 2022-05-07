@@ -6,10 +6,12 @@ import Loading from "../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { toast } from "react-toastify";
 import axios from "axios";
+import useToken from "../../hooks/useToken";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+    const [token] = useToken(user);
     const [sendPasswordResetEmail, sending] =
       useSendPasswordResetEmail(auth);
  const emailRef = useRef('')
@@ -18,14 +20,7 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     await signInWithEmailAndPassword(email,password);
-    const { data } = await axios.post(
-      "https://auto-cars-server.herokuapp.com/login",
-      { email }
-    );
-    localStorage.setItem("accessToken", data.accessToken);
-    
-    navigate(from, { replace: true });
-      
+  
   };
   const handleResetPassword =  (e) => {
     const email = emailRef.current.value;
@@ -55,10 +50,10 @@ const Login = () => {
   }
 
   useEffect(()=>{
-    if (user) {
-      // navigate(from, { replace: true });
+    if (token) {
+      navigate(from, { replace: true });
     }
-  }, [from, navigate, user])
+  }, [from, navigate, token])
   
 
 

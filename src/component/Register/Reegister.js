@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import useToken from "../../hooks/useToken";
 import Loading from "../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
@@ -10,6 +11,7 @@ const Reegister = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, {sendEmailVerification:true});
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const [token] = useToken(user);
 
      const navigate = useNavigate();
      const location = useLocation();
@@ -43,10 +45,10 @@ const Reegister = () => {
   };
 
   useEffect(() => {
-    if (user) {
+    if (token) {
       navigate(from, { replace: true });
     }
-  }, [from, navigate, user]);
+  }, [from, navigate, token]);
   
   return (
     <div className="w-full my-16 flex items-center justify-center">
