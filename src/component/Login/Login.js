@@ -5,7 +5,6 @@ import auth from "../../firebase.init";
 import Loading from "../Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { toast } from "react-toastify";
-import axios from "axios";
 import useToken from "../../hooks/useToken";
 
 const Login = () => {
