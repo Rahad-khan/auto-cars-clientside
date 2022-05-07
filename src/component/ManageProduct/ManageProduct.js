@@ -19,6 +19,9 @@ const ManageProduct = () => {
   // products delivered
   const handleDeliverd = async () => {
     const {quantity,sold, ...rest} = car;
+    if(quantity === 0){
+      return toast("This Product Out Of Stock..")
+    }
     const updateQuantiy = quantity - 1 ;
     const updateSoldNumber = sold + 1;
     const updatedStock = {quantity:updateQuantiy,sold:updateSoldNumber, ...rest};

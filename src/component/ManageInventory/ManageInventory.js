@@ -33,7 +33,7 @@ const ManageInventory = () => {
                 Supplier
               </th>
               <th scope="col" className="px-6 py-3">
-                Quantity
+                In Stock
               </th>
               <th scope="col" className="px-6 py-3">
                 Sold

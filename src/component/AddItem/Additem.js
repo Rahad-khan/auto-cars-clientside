@@ -16,6 +16,7 @@ const Additem = () => {
         const description = e.target.description.value;
         const email = e.target.email.value;
         const picture = e.target.picture.value;
+        const sold = 0;
         const insertData = {
             price,
             picture,
@@ -23,7 +24,8 @@ const Additem = () => {
             name,
             supplier,
             description,
-            email
+            email, 
+            sold
         }
         console.log(insertData);
         const url = "https://auto-cars-server.herokuapp.com/car";
