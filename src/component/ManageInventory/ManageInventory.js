@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
-
+import { AiFillDelete } from "react-icons/ai";
 const ManageInventory = () => {
   const [products, setProducts] = useProducts();
 
@@ -66,9 +66,9 @@ const ManageInventory = () => {
                   <button
                     onClick={() => handleDeleteCars(product._id)}
                     type="button"
-                    className="inline-block px-6 py-2 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                    className="flex items-center space-x-2 px-6 py-2 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                   >
-                    Delete
+                    <span>Delete</span> <AiFillDelete/>
                   </button>
                 </td>
               </tr>
@@ -76,14 +76,17 @@ const ManageInventory = () => {
           </tbody>
         </table>
       </div>
-        <Link className="flex items-center justify-center my-5 p-2 md:p-0" to="/addItem">
-          <button
-            type="button"
-            className="w-full md:w-1/2  inline-block px-6 py-2 border-2 border-blue-600 text-blue-600 font-medium hover:text-white hover:border-white leading-normal uppercase rounded hover:bg-blue-500 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
-          >
-            Add New Item
-          </button>
-        </Link>
+      <Link
+        className="flex items-center justify-center my-5 p-2 md:p-0"
+        to="/addItem"
+      >
+        <button
+          type="button"
+          className="w-full md:w-1/2  inline-block px-6 py-2 border-2 border-blue-600 text-blue-600 font-medium hover:text-white hover:border-white leading-normal uppercase rounded hover:bg-blue-500 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+        >
+          Add New Item 
+        </button>
+      </Link>
     </div>
   );
 };

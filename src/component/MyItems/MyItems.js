@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from 'react-router-dom';
 import auth from "../../firebase.init";
+import { AiFillDelete } from "react-icons/ai";
+
 
 const MyItems = () => {
   const navigate = useNavigate();
@@ -95,9 +97,9 @@ const MyItems = () => {
                     <button
                       onClick={() => handleDeleteCars(item._id)}
                       type="button"
-                      className="inline-block px-6 py-2 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                      className="flex items-center px-6 py-2 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                     >
-                      Delete
+                      <span>Delete</span> <AiFillDelete />
                     </button>
                   </td>
                 </tr>
