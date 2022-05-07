@@ -18,9 +18,10 @@ const ManageProduct = () => {
 
   // products delivered
   const handleDeliverd = async () => {
-    const {quantity, ...rest} = car;
+    const {quantity,sold, ...rest} = car;
     const updateQuantiy = quantity - 1 ;
-    const updatedStock = {quantity:updateQuantiy, ...rest};
+    const updateSoldNumber = sold + 1;
+    const updatedStock = {quantity:updateQuantiy,sold:updateSoldNumber, ...rest};
 
       const url = `https://auto-cars-server.herokuapp.com/cars/${_id}`;
 
@@ -50,7 +51,7 @@ const ManageProduct = () => {
       toast("Please Provide Valid Number")
     }
   };
-  const { description, name, picture, price, quantity, supplier } = car;
+  const { description, name, picture, price, quantity, supplier ,sold} = car;
   return (
     <div className="flex items-center justify-center w-full my-10">
       <div className="flex justify-center">
@@ -68,6 +69,7 @@ const ManageProduct = () => {
             <p className="text-gray-700 text-sm mb-2">Price: {price}</p>
             <p className="text-gray-700 text-base mb-2">{description}</p>
             <div>
+              <p>Sold: {sold}</p>
               <div className="flex items-center justify-start space-x-3 my-3">
                 <p>Quantity: {quantity}</p>
                 <button

@@ -36,6 +36,9 @@ const ManageInventory = () => {
                 Quantity
               </th>
               <th scope="col" className="px-6 py-3">
+                Sold
+              </th>
+              <th scope="col" className="px-6 py-3">
                 Price
               </th>
               <th scope="col" className="px-6 py-3">
@@ -57,6 +60,7 @@ const ManageInventory = () => {
                 </th>
                 <td className="px-6 py-4">{product?.supplier}</td>
                 <td className="px-6 py-4">{product?.quantity}</td>
+                <td className="px-6 py-4">{product?.sold}</td>
                 <td className="px-6 py-4">{product?.price}</td>
                 <td className="px-6 py-4 text-right">
                   <button
