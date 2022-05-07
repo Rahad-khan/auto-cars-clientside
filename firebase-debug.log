@@ -1,0 +1,13 @@
+[debug] [2022-05-07T12:38:52.489Z] ----------------------------------------------------------------------
+[debug] [2022-05-07T12:38:52.491Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kmrah\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-05-07T12:38:52.492Z] CLI Version:   10.6.0
+[debug] [2022-05-07T12:38:52.492Z] Platform:      win32
+[debug] [2022-05-07T12:38:52.492Z] Node Version:  v16.14.2
+[debug] [2022-05-07T12:38:52.493Z] Time:          Sat May 07 2022 18:38:52 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-05-07T12:38:52.493Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-05-07T12:38:52.565Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-07T12:38:52.565Z] > authorizing via signed-in user (kmrahad12@gmail.com)
+[debug] [2022-05-07T12:38:52.565Z] [iam] checking project auto-cars-b3b7a for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-05-07T12:38:52.568Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/auto-cars-b3b7a:testIamPermissions [none]
+[debug] [2022-05-07T12:38:52.568Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/auto-cars-b3b7a:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}

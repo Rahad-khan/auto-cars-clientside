@@ -7,60 +7,60 @@ const Blog = () => {
           <h1 className="text-2xl font-bold mb-3">
             1. Difference between Javascript and Node.JS ?
           </h1>
-          <div class="flex flex-col">
-            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-              <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                <div class="overflow-hidden shadow-lg">
-                  <table class="min-w-full border text-center ">
-                    <thead class="border-b">
+          <div className="flex flex-col">
+            <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                <div className="overflow-hidden shadow-lg">
+                  <table className="min-w-full border text-center ">
+                    <thead className="border-b">
                       <tr>
                         <th
                           scope="col"
-                          class="text-lg font-medium text-gray-900 px-6 py-4 border-r"
+                          className="text-lg font-medium text-gray-900 px-6 py-4 border-r"
                         >
                           JavaScript
                         </th>
                         <th
                           scope="col"
-                          class="text-lg font-medium text-gray-900 px-6 py-4 border-r"
+                          className="text-lg font-medium text-gray-900 px-6 py-4 border-r"
                         >
                           Node
                         </th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr class="border-b">
-                        <td class="text-sm  px-6 py-4 whitespace-nowrap border-r">
+                      <tr className="border-b">
+                        <td className="text-sm  px-6 py-4 whitespace-nowrap border-r">
                           JavaScript is a scripting/Programming Language.
                         </td>
-                        <td class="text-sm  px-6 py-4 whitespace-nowrap border-r">
+                        <td className="text-sm  px-6 py-4 whitespace-nowrap border-r">
                           Node JS is javascript runtime envirinment
                         </td>
                       </tr>
-                      <tr class="bg-white border-b">
-                        <td class="text-sm  px-6 py-4 whitespace-nowrap border-r">
+                      <tr className="bg-white border-b">
+                        <td className="text-sm  px-6 py-4 whitespace-nowrap border-r">
                           Javascript run in only browser
                         </td>
-                        <td class="text-sm  px-6 py-4 whitespace-nowrap border-r">
+                        <td className="text-sm  px-6 py-4 whitespace-nowrap border-r">
                           By the help of Node.js we can run javascript outside
                           of browser
                         </td>
                       </tr>
-                      <tr class="bg-white border-b">
-                        <td class="text-sm  px-6 py-4 whitespace-nowrap border-r">
+                      <tr className="bg-white border-b">
+                        <td className="text-sm  px-6 py-4 whitespace-nowrap border-r">
                           Javascript is mainly used for front-end development
                         </td>
-                        <td class="text-sm  px-6 py-4 whitespace-nowrap border-r">
+                        <td className="text-sm  px-6 py-4 whitespace-nowrap border-r">
                           Node.Js is mainly used for Back-end/ Server-Side
                           development
                         </td>
                       </tr>
-                      <tr class="bg-white border-b">
-                        <td class="text-sm  px-6 py-4 whitespace-nowrap border-r">
+                      <tr className="bg-white border-b">
+                        <td className="text-sm  px-6 py-4 whitespace-nowrap border-r">
                           Javascript frameWork example : 1.React.js,
                           2.Angular.js, 3.Vue.js
                         </td>
-                        <td class="text-sm  px-6 py-4 whitespace-nowrap border-r">
+                        <td className="text-sm  px-6 py-4 whitespace-nowrap border-r">
                           Node.JS frameWork example : 1.Express.js
                         </td>
                       </tr>
@@ -97,51 +97,51 @@ const Blog = () => {
           <h1 className="text-2xl font-bold mb-3">
             3. Difference between SQL and NoSQL ?
           </h1>
-          <div class="flex flex-col">
-            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-              <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                <div class="overflow-hidden shadow-lg">
-                  <table class="min-w-full border text-center ">
-                    <thead class="border-b">
+          <div className="flex flex-col">
+            <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                <div className="overflow-hidden shadow-lg">
+                  <table className="min-w-full border text-center ">
+                    <thead className="border-b">
                       <tr>
                         <th
                           scope="col"
-                          class="text-lg font-medium text-gray-900 px-6 py-4 border-r"
+                          className="text-lg font-medium text-gray-900 px-6 py-4 border-r"
                         >
                           SQL
                         </th>
                         <th
                           scope="col"
-                          class="text-lg font-medium text-gray-900 px-6 py-4 border-r"
+                          className="text-lg font-medium text-gray-900 px-6 py-4 border-r"
                         >
                           NoSQL
                         </th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr class="border-b">
-                        <td class="text-sm  px-6 py-4 whitespace-nowrap border-r">
+                      <tr className="border-b">
+                        <td className="text-sm  px-6 py-4 whitespace-nowrap border-r">
                           Vertically Scalable
                         </td>
-                        <td class="text-sm  px-6 py-4 whitespace-nowrap border-r">
+                        <td className="text-sm  px-6 py-4 whitespace-nowrap border-r">
                           Horizontally scalable
                         </td>
                       </tr>
-                      <tr class="bg-white border-b">
-                        <td class="text-sm  px-6 py-4 whitespace-nowrap border-r">
+                      <tr className="bg-white border-b">
+                        <td className="text-sm  px-6 py-4 whitespace-nowrap border-r">
                           SQL databases defines and manipulates data based
                           structured query language
                         </td>
-                        <td class="text-sm  px-6 py-4 whitespace-nowrap border-r">
+                        <td className="text-sm  px-6 py-4 whitespace-nowrap border-r">
                           NoSQL database has dynamic schema for unstructured
                           data.
                         </td>
                       </tr>
-                      <tr class="bg-white border-b">
-                        <td class="text-sm  px-6 py-4 whitespace-nowrap border-r">
+                      <tr className="bg-white border-b">
+                        <td className="text-sm  px-6 py-4 whitespace-nowrap border-r">
                           SQL databases are table-based
                         </td>
-                        <td class="text-sm  px-6 py-4 whitespace-nowrap border-r">
+                        <td className="text-sm  px-6 py-4 whitespace-nowrap border-r">
                           NoSQL databases are key-value pairs, document-based,
                           graph databases or wide-column stores.
                         </td>

@@ -39,9 +39,6 @@ const Header = () => {
                 <li className="mb-2 md:mb-0">
                   <CustomLink to="/blog">Blog</CustomLink>
                 </li>
-                <li className="mb-2 md:mb-0">
-                  <CustomLink to="/about">About Me</CustomLink>
-                </li>
               </ul>
               <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-lg md:font-medium">
                 {user ? (
