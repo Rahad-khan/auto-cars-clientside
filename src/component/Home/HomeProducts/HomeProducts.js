@@ -1,10 +1,15 @@
-import React from 'react';
-import useProducts from '../../../hooks/useProducts';
+import React, { useEffect, useState } from 'react';
 import Loading from '../../Loading/Loading';
 import ProductCard from '../ProductCard/ProductCard';
 
 const HomeProducts = () => {
-    const [products] = useProducts();
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch("https://auto-cars-server.herokuapp.com/cars")
+        .then(res => res.json())
+        .then(data => setProducts(data))
+    }, []);
     const firstSixProducts = products.slice(0,6);
     return (
       <div className="my-10">

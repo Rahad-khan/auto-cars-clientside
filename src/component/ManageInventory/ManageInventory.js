@@ -1,10 +1,15 @@
 import axios from "axios";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import useProducts from "../../hooks/useProducts";
 import { AiFillDelete } from "react-icons/ai";
 const ManageInventory = () => {
-  const [products, setProducts] = useProducts();
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("https://auto-cars-server.herokuapp.com/cars")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
 
   const handleDeleteCars = async (id) => {
     const isDelete = window.confirm("Are you really want to delete this item?");
